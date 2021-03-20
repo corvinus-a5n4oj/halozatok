@@ -3,10 +3,68 @@
 <head>
     <meta charset="utf-8" />
     <title>JS</title>
-    <script src="jsgyak.js">
-    </script>
+    <style>
+    .egymás_mellé{
+            display:flex;
+            flex-direction:row;
+        }
+        #pascal {
+            
+        }
+
+        .sor {
+            
+        }
+
+        .elem {
+            
+        }
+    </style>
 </head>
-<body onload="számos()">
+<body>
+    <div id="ide"></div>
+    <br /><br /><br /><br /><br />
+    <div id="pascal"></div>
+    <script>
+        let hova = document.getElementById("ide");
+        hova.classList.add("egymás_mellé");
+        hova.innerHTML = ""
+
+        for (var o = 0; o < 10; o++) {
+
+            let oszlop = document.createElement("div");
+            oszlop.style.background = `rgb(${100 - (10 * o)},${100 - (10 * o)},${100 - (10 * o)})`;
+            hova.appendChild(oszlop);
+            oszlop.innerText = o + 1;
+
+
+        }
+        /* let soros = document.getElementById("pascal");
+        soros.innerHTML = ""
+
+        var faktoriálisR = (n) => {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * faktoriálisR(n-1)
+            }
+        }
+
+        for (var sor = 0; sor < 10; sor++) {
+
+            let oszlop = document.createElement("div");
+            pascal.appendChild(oszlop);
+            oszlop.innerText = o + 1;
+
+            for (var oszlop = 0; oszlop <= sor; oszlop++) {
+
+            }
+        } */
+
+
+    </script>
+
+
 
 </body>
 </html>
