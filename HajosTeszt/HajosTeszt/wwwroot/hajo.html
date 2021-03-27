@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <title>Hajó</title>
+    <script src="hetedik.js"></script>
     <style>
         html, body {
             height: 100%;
         }
+
         div {
             margin: 10px;
             border: 5px dotted lightcoral;
@@ -48,21 +50,22 @@
             padding: 20px;
             width: 80px;
         }
+
         .kattintható:hover {
             background-color: fuchsia;
             color: white;
         }
 
         .kerdes {
-
         }
+
         .jo {
             background-color: green;
         }
+
         .rossz {
             background-color: red;
         }
-
     </style>
 </head>
 <body>
@@ -73,17 +76,18 @@
 
         <div id="középső">
             <div id="válaszok">
-                <div id="válasz1" class="kerdes kattintható">Válasz 1</div>
-                <div id="válasz2" class="kerdes kattintható">Válasz 2</div>
-                <div id="válasz3" class="kerdes kattintható">Válasz 3</div>
+                <div id="válasz1" class="kerdes kattintható" onclick="megjelöltválasz1()">Válasz 1</div>
+                <div id="válasz2" class="kerdes kattintható" onclick="megjelöltválasz2()">Válasz 2</div>
+                <div id="válasz3" class="kerdes kattintható" onclick="megjelöltválasz3()">Válasz 3</div>
             </div>
             <div id="kép">
                 <img id="kép1" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" />
             </div>
         </div>
         <div id="vezérlő">
-            <div class="gomb kattintható">Vissza</div>
-            <div class="gomb kattintható">Előre</div>
+            <div class="gomb kattintható" onclick="visszaKatt()">Vissza</div>
+            <div class="gomb kattintható" onclick="eloreKatt()">Előre</div>
         </div>
     </div>
 </body>
+</html>
