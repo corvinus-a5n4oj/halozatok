@@ -1,4 +1,7 @@
-﻿var kérdések;
+﻿//Valamiért csak az első kérdés kattintható, a többi nem.
+
+
+var kérdések;
 var aktualisKerdes = 0;
 window.onload = function letöltés() {
     fetch('/questions.json')
@@ -50,25 +53,37 @@ function eloreKatt() {
 }
 function megjelöltválasz1() {
     let megjelöltválasz1 = document.getElementById("válasz1");
+    let megjelöltválasz2 = document.getElementById("válasz2");
+    let megjelöltválasz3 = document.getElementById("válasz3");
     if (jóVálasz == 1) {
         megjelöltválasz1.classList.add("jo");
+        megjelöltválasz2.classList.add("rossz");
+        megjelöltválasz3.classList.add("rossz");
     } else {
         megjelöltválasz1.classList.add("rossz");
     }
 }
 function megjelöltválasz2() {
+    let megjelöltválasz1 = document.getElementById("válasz1");
     let megjelöltválasz2 = document.getElementById("válasz2");
+    let megjelöltválasz3 = document.getElementById("válasz3");
     if (jóVálasz == 2) {
-        megjelöltválasz1.classList.add("jo");
-    } else {
+        megjelöltválasz2.classList.add("jo");
         megjelöltválasz1.classList.add("rossz");
+        megjelöltválasz3.classList.add("rossz");
+    } else {
+        megjelöltválasz2.classList.add("rossz");
     }
 }
 function megjelöltválasz3() {
+    let megjelöltválasz1 = document.getElementById("válasz1");
+    let megjelöltválasz2 = document.getElementById("válasz2");
     let megjelöltválasz3 = document.getElementById("válasz3");
     if (jóVálasz == 3) {
-        megjelöltválasz1.classList.add("jo");
-    } else {
+        megjelöltválasz3.classList.add("jo");
+        megjelöltválasz2.classList.add("rossz");
         megjelöltválasz1.classList.add("rossz");
+    } else {
+        megjelöltválasz3.classList.add("rossz");
     }
 }
