@@ -1,7 +1,4 @@
-﻿//Valamiért csak az első kérdés kattintható, a többi nem.
-
-
-var kérdések;
+﻿var kérdések;
 var aktualisKerdes = 0;
 window.onload = function letöltés() {
     fetch('/questions.json')
@@ -15,12 +12,24 @@ function letöltésBefejeződött(d) {
     kérdések = d;
     kérdésMegjelenítés(0);
 }
+function kérdésBetöltés(id) {
+    fetch(`/questions/${id}`)
+        .then(response => {
+            if (!response.ok) {
+                console.error(`Hibás válasz: ${response.status}`)
+            }
+            else {
+                return response.json()
+            }
+        })
+        .then(data => kérdésMegjelenítés(data));
+}    
 function kérdésMegjelenítés(kérdés) {
     let ide = document.getElementById("kérdés_szöveg");
     ide.innerHTML = kérdések[kérdés].questionText;
-    document.getElementById("válasz1").innerHTML = kérdések[kérdés].answer1
+    document.getElementById("válasz1").innerHTML = kérdés.answer1
     for (var i = 1; i<=3; i++) {
-        console.log(kérdések[kérdés].questionText)
+        console.log(kérdés.questionText)
         let elem = document.getElementById("válasz" + i)
         elem.innerHTML = kérdések[kérdés]["answer" + i]
     }
@@ -29,6 +38,14 @@ function kérdésMegjelenítés(kérdés) {
         document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + kérdések[kérdés].image
     }
     jóVálasz = kérdések[kérdés].correctAnswer;
+    /* 
+         console.log(kérdés);
+    document.getElementById("kérdés_szöveg").innerText = kérdés.questionText
+    document.getElementById("válasz1").innerText = kérdés.answer1
+    document.getElementById("válasz2").innerText = kérdés.answer2
+    document.getElementById("válasz3").innerText = kérdés.answer3
+    document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
+    */
 
     válasz1.classList.remove("jo", "rossz");
     válasz2.classList.remove("jo", "rossz");
@@ -86,4 +103,4 @@ function megjelöltválasz3() {
     } else {
         megjelöltválasz3.classList.add("rossz");
     }
-}
+} 
