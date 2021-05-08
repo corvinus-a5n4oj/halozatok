@@ -1,4 +1,4 @@
-﻿var kérdések;
+﻿/*var kérdések;
 var aktualisKerdes = 0;
 window.onload = function letöltés() {
     fetch('/questions.json')
@@ -45,7 +45,7 @@ function kérdésMegjelenítés(kérdés) {
     document.getElementById("válasz2").innerText = kérdés.answer2
     document.getElementById("válasz3").innerText = kérdés.answer3
     document.getElementById("kép1").src = "https://szoft1.comeback.hu/hajo/" + kérdés.image;
-    */
+    
 
     válasz1.classList.remove("jo", "rossz");
     válasz2.classList.remove("jo", "rossz");
@@ -103,4 +103,4 @@ function megjelöltválasz3() {
     } else {
         megjelöltválasz3.classList.add("rossz");
     }
-} 
+} */

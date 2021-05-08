@@ -39,8 +39,7 @@
 
 
         }
-        /* let soros = document.getElementById("pascal");
-        soros.innerHTML = ""
+        let soros = document.getElementById("pascal");
 
         var faktoriálisR = (n) => {
             if (n === 0 || n === 1) {
@@ -49,17 +48,20 @@
                 return n * faktoriálisR(n-1)
             }
         }
-
-        for (var sor = 0; sor < 10; sor++) {
-
-            let oszlop = document.createElement("div");
-            pascal.appendChild(oszlop);
-            oszlop.innerText = o + 1;
-
-            for (var oszlop = 0; oszlop <= sor; oszlop++) {
-
+        for (var s = 0; s < 10; s++) {
+            let sor2 = document.createElement("div");
+            sor2.classList.add("sor2");
+            soros.appendChild(sor2);
+            for (var o = 0; o < 10; o++) {
+                let szam = document.createElement("div");
+                sor2.appendChild(szam);
+                szam.classList.add("soros");
+                szam.style.top = s * 30;
+                szam.style.left = o * 30;
+                szam.innerText = faktoriálisR(s) / (faktoriálisR(o) * faktoriálisR(s - o));
             }
-        } */
+        }
+
 
 
     </script>
